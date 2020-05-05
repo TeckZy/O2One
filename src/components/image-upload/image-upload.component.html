@@ -1,0 +1,35 @@
+<div class="d-flex align-items-center w-100 flex-column">
+	<div class="w-50 justify-content-center my-4">
+		<input
+			style="height: 40px;"
+			class="form-control"
+			type="file"
+			(change)="fileChangeEvent($event)"
+		/>
+	</div>
+
+	<div class="w-50 my-4">
+		<image-cropper
+			[imageChangedEvent]="imageChangedEvent"
+			[maintainAspectRatio]="true"
+			[aspectRatio]="4 / 3"
+			format="png"
+			(imageCropped)="imageCropped($event)"
+			[cropperMinHeight]="'300px'"
+			[cropperMinWidth]="'300px'"
+		></image-cropper>
+	</div>
+	<div class="d-flex my-4 flex-column">
+		<div *ngIf="croppedImage">
+			<h6>Output Image</h6>
+		</div>
+		<div>
+			<img [src]="croppedImage" />
+		</div>
+		<div *ngIf="croppedImage" class="d-flex justify-content-center my-2">
+			<a class="btn btn-primary" download="crooped.png" [href]="croppedImage"
+				>Download</a
+			>
+		</div>
+	</div>
+</div>

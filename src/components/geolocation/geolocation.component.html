@@ -1,0 +1,41 @@
+<div class="d-flex flex-column w-100 justify-content-center align-items-center">
+	<div class="d-fllex w-50">
+		<mat-google-maps-autocomplete
+			country="in"
+			type="address"
+			(onAutocompleteSelected)="onAutocompleteSelected($event)"
+			(onLocationSelected)="onLocationSelected($event)"
+		>
+		</mat-google-maps-autocomplete>
+
+		<input
+			class="form-control my-2"
+			placeholder="latitude"
+			[(ngModel)]="latitude"
+		/>
+		<input
+			class="form-control my-2"
+			placeholder="longitude"
+			[(ngModel)]="longitude"
+		/>
+
+		<div *ngIf="latitude && longitude">
+			<div>
+				<agm-map
+					[latitude]="latitude"
+					[longitude]="longitude"
+					[disableDefaultUI]="false"
+					[zoomControl]="false"
+				>
+					<agm-marker
+						[latitude]="latitude"
+						[longitude]="longitude"
+					></agm-marker>
+				</agm-map>
+			</div>
+		</div>
+		<div *ngIf="!latitude || !longitude">
+			<h6 class="text-gainsboro">Please Select Location To view Map</h6>
+		</div>
+	</div>
+</div>

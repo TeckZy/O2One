@@ -1,0 +1,34 @@
+<div class="align-content-center d-flex" style="height: 100vh;">
+	<div class="d-flex align-content-center m-auto">
+		<div class="d-flex">
+			<div class="d-flex position-relative">
+				<label for="ccId2">Credit Card w/ custom validator in code:</label>
+				<input
+					class="form-control"
+					type="text"
+					[ngClass]="
+						cardnumber ? (invalid ? 'border-green' : 'border-red') : ''
+					"
+					[(ngModel)]="cardnumber"
+					(ngModelChange)="parseCC($event)"
+					[maxlength]="getMaxLength()"
+				/>
+			</div>
+
+			<div
+				style="height: 46px; width: 100px; top: -6px;"
+				class="position-relative"
+			>
+				<img class="h-100 w-100 position-absolute" [src]="getIcon()" alt="" />
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="d-flex justify-content-center">
+	<div class="col-4">
+		<div *ngIf="cardType.error" class="warning alert alert-danger">
+			{{ cardType.error }}
+		</div>
+	</div>
+</div>
