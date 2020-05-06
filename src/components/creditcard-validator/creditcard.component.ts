@@ -51,7 +51,7 @@ export class CreditCardComponent implements OnInit {
 		},
 	};
 
-	parseCC(vale) {
+	parseCC() {
 		this.cardType = {
 			error: '',
 			type: undefined,
@@ -93,7 +93,7 @@ export class CreditCardComponent implements OnInit {
 		console.log(this.cardType);
 	}
 
-	getIcon(value) {
+	getIcon() {
 		return (
 			window.location.origin + '/assets/' + this.iconMap[this.cardType.type]
 		);

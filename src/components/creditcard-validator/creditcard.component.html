@@ -10,7 +10,7 @@
 						cardnumber ? (invalid ? 'border-green' : 'border-red') : ''
 					"
 					[(ngModel)]="cardnumber"
-					(ngModelChange)="parseCC($event)"
+					(ngModelChange)="parseCC()"
 					[maxlength]="getMaxLength()"
 				/>
 			</div>
