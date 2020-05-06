@@ -94,9 +94,7 @@ export class CreditCardComponent implements OnInit {
 	}
 
 	getIcon() {
-		return (
-			window.location.origin + '/assets/' + this.iconMap[this.cardType.type]
-		);
+		return '../../assets/' + this.iconMap[this.cardType.type];
 	}
 
 	getMaxLength() {
