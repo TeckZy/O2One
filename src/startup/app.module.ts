@@ -3,22 +3,9 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from '../modules/app-routing/app-routing.module';
 import { AppMaterialModule } from '../modules/app-material/app-material.module';
-import { AppAgGridModule } from '../modules/app-ag-grid/app-ag-grid.module';
-import { BaseHttpService } from '../services/BaseHttpService';
-import { AppSharedService } from '../services/app-shared/app-shared.service';
-import { AgGridBaseComponent } from '../components/base/ag-grid-base/ag-grid-base.component';
-import { UploadComponent } from '../components/import-wizard/upload/upload.component';
 import { HeaderComponent } from '../components/header/header.component';
 import { ToolbarComponent } from '../components/toolbar/toolbar.component';
-import { FileUploadComponent } from '../components/base/file-upload/file-upload.component';
-import { FileUploadModule } from 'ng2-file-upload';
 import { HttpClientModule } from '@angular/common/http';
-import { FlexLayoutModule } from '@angular/flex-layout';
-import { BordereauComponent } from '../components/import-wizard/bordereau/bordereau.component';
-import { NameMatchingComponent } from '../components/name-matching/name-matching.component';
-import { AgGridCellSelectEditor } from '../components/base/ag-grid-base/ag-grid-components/select-list.editor';
-import { AgGridCellSelectRenderer } from '../components/base/ag-grid-base/ag-grid-components/select-list.renderer';
-import { BordereauActionsRenderer } from '../components/base/ag-grid-base/ag-grid-components/bordereau-action.renderer';
 import { CreditCardComponent } from '../components/creditcard-validator/creditcard.component';
 import { FormsModule } from '@angular/forms';
 import { GeoLocationComponent } from '../components/geolocation/geolocation.component';
@@ -26,19 +13,12 @@ import { ImageUploaderComponent } from '../components/image-upload/image-upload.
 import { ImageCropperModule } from 'ngx-image-cropper';
 import { MatGoogleMapsAutocompleteModule } from '@angular-material-extensions/google-maps-autocomplete';
 import { AgmCoreModule } from '@agm/core';
+import { CardModule } from 'ngx-card/ngx-card';
 @NgModule({
 	declarations: [
 		AppComponent,
-		AgGridBaseComponent,
-		UploadComponent,
 		HeaderComponent,
 		ToolbarComponent,
-		FileUploadComponent,
-		BordereauComponent,
-		NameMatchingComponent,
-		AgGridCellSelectEditor,
-		AgGridCellSelectRenderer,
-		BordereauActionsRenderer,
 		CreditCardComponent,
 		GeoLocationComponent,
 		ImageUploaderComponent,
@@ -49,9 +29,7 @@ import { AgmCoreModule } from '@agm/core';
 		HttpClientModule,
 		AppRoutingModule,
 		AppMaterialModule,
-		AppAgGridModule,
-		FileUploadModule,
-		FlexLayoutModule,
+		CardModule,
 		ImageCropperModule,
 		AgmCoreModule.forRoot({
 			apiKey: 'AIzaSyCaKbVhcX_22R_pRKDYuNA7vox-PtGaDkI',
@@ -59,13 +37,7 @@ import { AgmCoreModule } from '@agm/core';
 		}),
 		MatGoogleMapsAutocompleteModule,
 	],
-	providers: [BaseHttpService, AppSharedService, HttpClientModule],
-	entryComponents: [
-		AgGridCellSelectEditor,
-		AgGridCellSelectRenderer,
-		// BordereauActionsRenderer,
-		// UploadComponent,
-	],
+	providers: [HttpClientModule],
 	bootstrap: [AppComponent],
 })
 export class AppModule {}

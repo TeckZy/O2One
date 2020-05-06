@@ -1,39 +1,10 @@
-import {
-	Component,
-	OnInit,
-	ViewChild,
-	ElementRef,
-	NgZone,
-	AfterViewInit,
-} from '@angular/core';
-import { ApiService, Maps } from './geolocatio.service';
+import { HttpClient } from '@angular/common/http';
+import { Component, OnInit } from '@angular/core';
 import PlaceResult = google.maps.places.PlaceResult;
 import {
 	Location,
 	Appearance,
-	GermanAddress,
 } from '@angular-material-extensions/google-maps-autocomplete';
-import { geolib } from './geolib';
-// import * as geolib from 'geolib';
-import * as turf from '@turf/turf';
-const colors = [
-	'red',
-	'blue',
-	'green',
-	'yellow',
-	'brown',
-	'BurlyWood',
-	'Cyan',
-	'DarkGreen',
-	'DarkOrchid',
-	'DarkOliveGreen',
-	'Fuchsia',
-	'GoldenRod',
-	'Indigo',
-	'LightCoral',
-	'MediumSlateBlue',
-];
-let colorIndex = 0;
 
 const place = null as google.maps.places.PlaceResult;
 type Components = typeof place.address_components;
@@ -50,19 +21,22 @@ export class GeoLocationComponent implements OnInit {
 	public longitude: number;
 	public selectedAddress: PlaceResult;
 	formattedAdd = '';
+	constructor(private hc: HttpClient) {}
 	onLocationSelected(location: Location) {
-		console.log('onLocationSelected: ', location);
 		this.latitude = location.latitude;
 		this.longitude = location.longitude;
-		console.log(location);
 	}
 	onAutocompleteSelected(result: PlaceResult) {
 		this.selectedAddress = result;
 		this.formattedAdd = result.formatted_address;
 	}
-
-	onGermanAddressMapped($event: GermanAddress) {
-		console.log('onGermanAddressMapped', $event);
+	updateAddress() {
+		this.hc
+			.get(
+				`https://maps.googleapis.com/maps/api/geocode/json?latlng=${this.latitude},${this.longitude}&key=AIzaSyCaKbVhcX_22R_pRKDYuNA7vox-PtGaDkI`
+			)
+			.subscribe((data) => {
+				//
+			});
 	}
-	updateAddress() {}
 }

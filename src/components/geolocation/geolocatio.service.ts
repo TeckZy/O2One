@@ -46,6 +46,7 @@ export class ApiService {
 			.join('&');
 		return `//maps.googleapis.com/maps/api/js?${params}&language=fr`;
 	}
+	getLocation() {}
 }
 
 // @types/geolib is written in a way that `import * as geolib from 'geolib';` does not work

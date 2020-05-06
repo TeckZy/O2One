@@ -2,31 +2,6 @@
 	<div class="d-flex justify-content-center w-100">
 		<h5>Only Matero / Visa / American Express supported</h5>
 	</div>
-
-	<div class="d-flex align-content-center justify-content-center m-auto w-100">
-		<div class="d-flex">
-			<div class="d-flex position-relative">
-				<label for="ccId2">Credit Card :</label>
-				<input
-					class="form-control"
-					type="text"
-					[ngClass]="
-						cardnumber ? (invalid ? 'border-green' : 'border-red') : ''
-					"
-					[(ngModel)]="cardnumber"
-					(ngModelChange)="parseCC()"
-					[maxlength]="getMaxLength()"
-				/>
-			</div>
-
-			<div
-				style="height: 46px; width: 100px; top: -6px;"
-				class="position-relative"
-			>
-				<img class="h-100 w-100 position-absolute" [src]="getIcon()" alt="" />
-			</div>
-		</div>
-	</div>
 </div>
 
 <div class="d-flex justify-content-center">
@@ -36,3 +11,126 @@
 		</div>
 	</div>
 </div>
+
+<main>
+	<article class="slds-card">
+		<div class="slds-card__body slds-card__body_inner">
+			<div class="demo-container slds-border_top slds-border_bottom">
+				<h3 class="text-gainsboro"></h3>
+				<div class="card-wrapper"></div>
+				<div class="form-container">
+					<form
+						class="slds-form slds-form_compound form-group"
+						card
+						container=".card-wrapper"
+						action="javascript:void(0);"
+					>
+						<fieldset class="slds-form-element">
+							<div class="slds-form-element__group">
+								<div class="slds-form-element__row">
+									<div class="slds-form-element">
+										<input
+											type="text"
+											name="number"
+											placeholder="Card number"
+											class="form-control slds-input"
+											card-number
+										/>
+									</div>
+								</div>
+								<div class="slds-form-element__row">
+									<div class="slds-size_1-of-2">
+										<div class="slds-form-element">
+											<input
+												type="text"
+												name="first-name"
+												placeholder="First name"
+												class="form-control slds-input"
+												card-name
+												readonly
+												value="A2One"
+											/>
+										</div>
+									</div>
+									<div class="slds-size_1-of-2">
+										<div class="slds-form-element">
+											<input
+												type="text"
+												name="last-name"
+												placeholder="Last name"
+												class="form-control slds-input"
+												card-name
+												value="A2One"
+											/>
+										</div>
+									</div>
+								</div>
+								<div class="slds-form-element__row">
+									<div class="slds-size_1-of-2">
+										<div class="slds-form-element">
+											<input
+												type="text"
+												name="expiry"
+												placeholder="MM/YY"
+												class="form-control slds-input"
+												card-expiry
+											/>
+										</div>
+									</div>
+									<div class="slds-size_1-of-2">
+										<div class="slds-form-element">
+											<input
+												type="text"
+												name="cvc"
+												placeholder="CVC"
+												class="form-control slds-input"
+												card-cvc
+											/>
+										</div>
+									</div>
+								</div>
+								<div class="slds-form-element__row">
+									<input
+										type="submit"
+										value="Submit"
+										class="btn btn-primary slds-button slds-button--brand"
+									/>
+								</div>
+							</div>
+						</fieldset>
+					</form>
+					<div
+						class="d-flex align-content-center justify-content-center m-auto w-100"
+					>
+						<div class="d-flex">
+							<div class="d-flex position-relative">
+								<label for="ccId2">Credit Card :</label>
+								<input
+									class="form-control"
+									type="text"
+									[ngClass]="
+										cardnumber ? (invalid ? 'border-green' : 'border-red') : ''
+									"
+									[(ngModel)]="cardnumber"
+									(ngModelChange)="parseCC()"
+									[maxlength]="getMaxLength()"
+								/>
+							</div>
+
+							<div
+								style="height: 46px; width: 100px; top: -6px;"
+								class="position-relative"
+							>
+								<img
+									class="h-100 w-100 position-absolute"
+									[src]="getIcon()"
+									alt=""
+								/>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</article>
+</main>
