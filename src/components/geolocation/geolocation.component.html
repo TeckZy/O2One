@@ -12,11 +12,13 @@
 			class="form-control my-2"
 			placeholder="latitude"
 			[(ngModel)]="latitude"
+			(ngModelChange)="updateAddress()"
 		/>
 		<input
 			class="form-control my-2"
 			placeholder="longitude"
 			[(ngModel)]="longitude"
+			(ngModelChange)="updateAddress()"
 		/>
 
 		<div *ngIf="latitude && longitude">

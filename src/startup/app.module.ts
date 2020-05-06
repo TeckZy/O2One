@@ -2,7 +2,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from '../modules/app-routing/app-routing.module';
-import { DashboardComponent } from '../components/dashboard/dashboard.component';
 import { AppMaterialModule } from '../modules/app-material/app-material.module';
 import { AppAgGridModule } from '../modules/app-ag-grid/app-ag-grid.module';
 import { BaseHttpService } from '../services/BaseHttpService';
@@ -14,9 +13,7 @@ import { ToolbarComponent } from '../components/toolbar/toolbar.component';
 import { FileUploadComponent } from '../components/base/file-upload/file-upload.component';
 import { FileUploadModule } from 'ng2-file-upload';
 import { HttpClientModule } from '@angular/common/http';
-import { ImportDirective } from '../directives/import-wizard/import.directive';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { LoginComponent } from '../components/login/login.component';
 import { BordereauComponent } from '../components/import-wizard/bordereau/bordereau.component';
 import { NameMatchingComponent } from '../components/name-matching/name-matching.component';
 import { AgGridCellSelectEditor } from '../components/base/ag-grid-base/ag-grid-components/select-list.editor';
@@ -33,13 +30,10 @@ import { AgmCoreModule } from '@agm/core';
 	declarations: [
 		AppComponent,
 		AgGridBaseComponent,
-		DashboardComponent,
 		UploadComponent,
 		HeaderComponent,
 		ToolbarComponent,
 		FileUploadComponent,
-		ImportDirective,
-		LoginComponent,
 		BordereauComponent,
 		NameMatchingComponent,
 		AgGridCellSelectEditor,
@@ -48,7 +42,6 @@ import { AgmCoreModule } from '@agm/core';
 		CreditCardComponent,
 		GeoLocationComponent,
 		ImageUploaderComponent,
-		// ImageCropperComponent,
 	],
 	imports: [
 		FormsModule,
@@ -70,8 +63,8 @@ import { AgmCoreModule } from '@agm/core';
 	entryComponents: [
 		AgGridCellSelectEditor,
 		AgGridCellSelectRenderer,
-		BordereauActionsRenderer,
-		UploadComponent,
+		// BordereauActionsRenderer,
+		// UploadComponent,
 	],
 	bootstrap: [AppComponent],
 })

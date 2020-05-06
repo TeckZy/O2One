@@ -1,6 +1,18 @@
 .border-green {
 	border: 4px solid green;
 }
+
 .border-red {
 	border: 4px solid red;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+	outline: none !important;
+}
+
+*:focus {
+	outline: none;
 }

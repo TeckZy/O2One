@@ -49,17 +49,20 @@ export class GeoLocationComponent implements OnInit {
 	public latitude: number;
 	public longitude: number;
 	public selectedAddress: PlaceResult;
+	formattedAdd = '';
 	onLocationSelected(location: Location) {
 		console.log('onLocationSelected: ', location);
 		this.latitude = location.latitude;
 		this.longitude = location.longitude;
+		console.log(location);
 	}
 	onAutocompleteSelected(result: PlaceResult) {
-		console.log('onAutocompleteSelected: ', result);
 		this.selectedAddress = result;
+		this.formattedAdd = result.formatted_address;
 	}
 
 	onGermanAddressMapped($event: GermanAddress) {
 		console.log('onGermanAddressMapped', $event);
 	}
+	updateAddress() {}
 }
