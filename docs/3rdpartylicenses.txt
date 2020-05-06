@@ -142,8 +142,6 @@ THE SOFTWARE.
 
 @angular/material/chips
 
-@angular/material/core
-
 @angular/material/datepicker
 
 @angular/material/dialog
@@ -158,11 +156,7 @@ THE SOFTWARE.
 
 @angular/material/radio
 
-@angular/material/select
-
 @angular/material/sidenav
-
-@angular/material/tabs
 
 @angular/material/toolbar
 
