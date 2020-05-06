@@ -4,14 +4,6 @@
 	</div>
 </div>
 
-<div class="d-flex justify-content-center">
-	<div class="col-4">
-		<div *ngIf="cardType.error" class="warning alert alert-danger">
-			{{ cardType.error }}
-		</div>
-	</div>
-</div>
-
 <main>
 	<article class="slds-card">
 		<div class="slds-card__body slds-card__body_inner">
@@ -89,13 +81,6 @@
 										</div>
 									</div>
 								</div>
-								<div class="slds-form-element__row">
-									<input
-										type="submit"
-										value="Submit"
-										class="btn btn-primary slds-button slds-button--brand"
-									/>
-								</div>
 							</div>
 						</fieldset>
 					</form>
@@ -108,6 +93,7 @@
 								<input
 									class="form-control"
 									type="text"
+									placeholder="Light version "
 									[ngClass]="
 										cardnumber ? (invalid ? 'border-green' : 'border-red') : ''
 									"
@@ -128,6 +114,16 @@
 								/>
 							</div>
 						</div>
+					</div>
+				</div>
+			</div>
+			<div
+				class="d-flex justify-content-center position-absolute"
+				style="left: 100px;"
+			>
+				<div>
+					<div *ngIf="cardType.error" class="warning alert alert-danger">
+						{{ cardType.error }}
 					</div>
 				</div>
 			</div>
